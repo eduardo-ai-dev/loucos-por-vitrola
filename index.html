@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loucos por Vitrola | A arte em toca discos — Restauração & Catálogo Vintage</title>
+  <meta name="description" content="Oficina especializada na restauração, calibração e venda de toca-discos vintage das décadas de 60, 70 e 80. Garantia de 90 dias e envio seguro para todo o Brasil.">
+  <link rel="icon" type="image/png" href=".docs/logo-loucos-por-vitrola.png">
+  
+  <!-- Estilos do Design System -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+  <a href="#mainContent" class="skip-link">Pular para o conteúdo principal</a>
+
+  <!-- Barra de Destaque Superior (Announcement Bar) -->
+  <aside class="announcement-bar" id="announcementBar" aria-label="Aviso de Envio e Frete">
+    <div class="container announcement-bar-container">
+      <div class="announcement-content">
+        <svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+        <span>🎶 <strong>Envio especializado e seguro para todo o Brasil</strong> | Frete grátis para compras acima de R$ 990,00</span>
+      </div>
+      <button type="button" class="announcement-close-btn" id="dismissAnnouncementBtn" aria-label="Fechar aviso de frete">✕</button>
+    </div>
+  </aside>
+
+  <!-- Faixa de Confiança Superior -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-item">
+        <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        <span>Oficina no ABC Paulista: Rua Brasilio Machado, 435 — Santo André, SP</span>
+      </div>
+      <div class="top-bar-social">
+        <a href="https://wa.me/5511996176660" target="_blank" rel="noopener noreferrer" class="top-bar-item" title="WhatsApp Direto">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          <span>(11) 99617-6660</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cabeçalho Principal Global -->
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <div class="header-nav-wrapper">
+        <a href="index.html" class="header-brand" aria-label="Loucos por Vitrola - Página Inicial">
+          <img src=".docs/logo-loucos-por-vitrola.png" alt="Loucos por Vitrola - A arte em toca discos" class="brand-logo-img" onerror="this.src='assets/images/logo-loucos-por-vitrola.png'">
+        </a>
+
+        <!-- Navegação Desktop -->
+        <nav class="main-navigation" aria-label="Navegação Principal">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link active">Início</a></li>
+            <li><a href="sobre.html" class="nav-link">Sobre Nós</a></li>
+            <li><a href="servicos.html" class="nav-link">Serviços</a></li>
+            <li><a href="produtos.html" class="nav-link">Catálogo</a></li>
+            <li><a href="galeria.html" class="nav-link">Galeria</a></li>
+            <li><a href="contato.html" class="nav-link">Contato</a></li>
+          </ul>
+        </nav>
+
+        <!-- Ações do Cabeçalho -->
+        <div class="header-actions">
+          <button type="button" class="cart-toggle-btn" aria-label="Ver Carrinho de Compras" title="Abrir Carrinho">
+            <svg class="icon" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+            <span class="cart-badge" id="cartBadge" style="display: none;">0</span>
+          </button>
+
+          <a href="https://wa.me/5511996176660" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm" aria-label="Fale no WhatsApp">
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            <span>WhatsApp</span>
+          </a>
+
+          <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir Menu de Navegação">
+            <svg class="icon" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Menu Mobile Gaveta -->
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Menu Mobile">
+    <div class="mobile-nav-header">
+      <img src=".docs/logo-loucos-por-vitrola.png" alt="Loucos por Vitrola" class="mobile-drawer-logo" onerror="this.src='assets/images/logo-loucos-por-vitrola.png'">
+      <button type="button" class="cart-close-btn" id="mobileCloseBtn" style="color: var(--color-vinyl-black);" aria-label="Fechar Menu">✕</button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link active">Início</a></li>
+      <li><a href="sobre.html" class="mobile-nav-link">Sobre Nós</a></li>
+      <li><a href="servicos.html" class="mobile-nav-link">Serviços</a></li>
+      <li><a href="produtos.html" class="mobile-nav-link">Catálogo</a></li>
+      <li><a href="galeria.html" class="mobile-nav-link">Galeria</a></li>
+      <li><a href="contato.html" class="mobile-nav-link">Contato</a></li>
+    </ul>
+    <div style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--color-border-subtle);">
+      <a href="https://wa.me/5511996176660" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-block">
+        Falar com Técnico no WhatsApp
+      </a>
+    </div>
+  </aside>
+
+  <!-- Conteúdo Principal -->
+  <main id="mainContent">
+
+    <!-- Hero Section -->
+    <section class="hero-home" aria-label="Destaque Principal">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-badge-wrap">
+              <span class="badge badge-gold">Oficina Vintage Especializada Desde 2016</span>
+            </div>
+            <h1 class="hero-title">
+              A Arte e a Alma do <span class="text-gold">Som Analógico</span>: Restauração & Vitrolas Selecionadas
+            </h1>
+            <p class="hero-lead">
+              Transformamos equipamentos clássicos em obras de arte funcionais. Toca-discos das décadas de 60, 70 e 80 totalmente restaurados, calibrados com instrumentos de precisão e prontos para girar seus vinis favoritos.
+            </p>
+            <div class="hero-cta-group">
+              <a href="produtos.html" class="btn btn-gold btn-lg">
+                <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                Ver Catálogo de Vitrolas
+              </a>
+              <a href="contato.html" class="btn btn-gold-outline btn-lg">
+                Solicitar Restauração
+              </a>
+            </div>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <span class="stat-number">+1.200</span>
+                <span class="stat-label">Aparelhos Recuperados</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">90 Dias</span>
+                <span class="stat-label">Garantia em Todos</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">100% Brasil</span>
+                <span class="stat-label">Envio Seguro e Reforçado</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-image-frame">
+              <img src="assets/images/produtos/technics-sld20.jpg" alt="Toca-discos vintage restaurado em funcionamento" width="580" height="435">
+            </div>
+            <div class="hero-floating-card">
+              <div class="floating-icon">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <div>
+                <strong style="display:block; font-size: 0.9rem; color: #fff;">Calibração de Bancada</strong>
+                <span style="font-size: 0.75rem; color: var(--color-vintage-gold);">Pitch e azimute ajustados no osciloscópio</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pilares da Marca (Destaques Rápidos) -->
+    <section class="section" style="padding-top: 0; padding-bottom: 3rem;" aria-label="Pilares de Qualidade">
+      <div class="container">
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-icon-box">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+            </div>
+            <h3>Restauração Artesanal</h3>
+            <p>Desmontagem minuciosa de cada componente mecânico, higienização química e relubrificação de alta densidade.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon-box">
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="3"></circle></svg>
+            </div>
+            <h3>Peças Originais</h3>
+            <p>Trabalhamos exclusivamente com correias novas de precisão, cápsulas magnéticas e agulhas genuínas de diamante.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon-box">
+              <svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+            </div>
+            <h3>Calibração Precisa</h3>
+            <p>Alinhamento milimétrico de tracking force com balança digital, anti-skating e teste estroboscópico de rotação.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon-box">
+              <svg class="icon" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            </div>
+            <h3>Envio Seguro Nacional</h3>
+            <p>Embalagem personalizada e reforçada contra vibrações, protegendo o prato e o braço até a porta da sua casa.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vitrine em Destaque -->
+    <section class="section" style="background-color: var(--color-surface-pure); border-top: 1px solid var(--color-border-subtle); border-bottom: 1px solid var(--color-border-subtle);" aria-label="Vitrine de Equipamentos">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Prontos Para Tocar</span>
+          <h2 class="section-title">Vitrine em Destaque</h2>
+          <div class="gold-divider"></div>
+          <p class="section-lead">
+            Equipamentos vintage revisados, testados por mais de 48 horas ininterruptas e com garantia de 90 dias da oficina.
+          </p>
+        </div>
+
+        <div class="products-grid" id="featuredVitrineGrid">
+          <!-- Renderizado via assets/js/catalog.js -->
+        </div>
+
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <a href="produtos.html" class="btn btn-primary btn-lg">
+            Explorar Todo o Catálogo à Venda
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Serviços Resumidos -->
+    <section class="section" aria-label="Serviços da Oficina">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Excelência Técnica</span>
+          <h2 class="section-title">Nossos Serviços Especializados</h2>
+          <div class="gold-divider"></div>
+          <p class="section-lead">
+            Da restauração estética em madeira nobre à calibração eletrônica de ponta para colecionadores e amantes de música.
+          </p>
+        </div>
+
+        <div class="services-catalog-grid">
+          <div class="service-detail-card">
+            <div class="service-icon-banner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+              <h3>Restauração Completa</h3>
+            </div>
+            <p>Desmontagem integral, polimento químico de tampas acrílicas, restauração e verniz de gabinetes em madeira nobre e troca de correias ressecadas.</p>
+            <ul class="service-bullets">
+              <li><svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg> Polimento cristalino de tampa acrílica sem marcas</li>
+              <li><svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg> Marcenaria e revitalização de acabamento em verniz</li>
+            </ul>
+            <a href="servicos.html" class="btn btn-secondary btn-sm" style="margin-top: auto; align-self: flex-start;">Ver Detalhes do Serviço</a>
+          </div>
+
+          <div class="service-detail-card">
+            <div class="service-icon-banner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><polygon points="12 8 8 12 12 16 12 8"></polygon></svg>
+              <h3>Troca & Alinhamento de Cápsulas</h3>
+            </div>
+            <p>Instalação de agulhas e cápsulas de alta performance (Audio-Technica, Shure, Ortofon). Calibração precisa de transferidor (protactor) e peso de trilhagem.</p>
+            <ul class="service-bullets">
+              <li><svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg> Eliminação de distorção de rastreamento (Inner Groove)</li>
+              <li><svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg> Ajuste fino de azimute e ângulo vertical de rastreio (VTA)</li>
+            </ul>
+            <a href="servicos.html" class="btn btn-secondary btn-sm" style="margin-top: auto; align-self: flex-start;">Ver Detalhes do Serviço</a>
+          </div>
+
+          <div class="service-detail-card">
+            <div class="service-icon-banner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+              <h3>Upgrades & Aterramento Anti-Hum</h3>
+            </div>
+            <p>Substituição de cabeamento antigo oxidado por cabos blindados de áudio estéreo com conectores RCA banhados a ouro e aterramento dedicado contra ruídos indesejados.</p>
+            <ul class="service-bullets">
+              <li><svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg> Fim do zumbido (hum) em caixas de som e receivers</li>
+              <li><svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg> Instalação de pré-amplificadores phono internos opcionais</li>
+            </ul>
+            <a href="servicos.html" class="btn btn-secondary btn-sm" style="margin-top: auto; align-self: flex-start;">Ver Detalhes do Serviço</a>
+          </div>
+
+          <div class="service-detail-card">
+            <div class="service-icon-banner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <h3>Manutenção Preventiva & Calibração</h3>
+            </div>
+            <p>Ajuste estroboscópico de pitch nas velocidades 33, 45 e 78 RPM, regulagem do mecanismo automático de retorno do braço e lubrificação técnica do eixo central.</p>
+            <ul class="service-bullets">
+              <li><svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg> Estabilidade absoluta de rotação sem oscilações</li>
+              <li><svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg> Lubrificantes sintéticos específicos para mecânica fina</li>
+            </ul>
+            <a href="servicos.html" class="btn btn-secondary btn-sm" style="margin-top: auto; align-self: flex-start;">Ver Detalhes do Serviço</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Como Funciona Nosso Processo -->
+    <section class="section section-dark" aria-label="Processo de Restauração">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Transparência Total</span>
+          <h2 class="section-title">Como Funciona Nosso Processo</h2>
+          <div class="gold-divider"></div>
+          <p class="section-lead">
+            Tratamos cada equipamento com o mesmo respeito e carinho de uma peça de família. Acompanhe as 4 etapas do nosso trabalho:
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-step">
+            <div class="process-step-number">01</div>
+            <h3>Diagnóstico & Orçamento</h3>
+            <p>Você nos envia fotos e o defeito apresentado via WhatsApp ou traz o aparelho em nossa oficina em Santo André. Elaboramos um laudo detalhado e orçamento transparente.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="process-step-number">02</div>
+            <h3>Desmontagem & Restauração</h3>
+            <p>Desmontamos o aparelho, limpamos os resíduos de graxa antiga ressecada, consertamos a parte eletrônica, restauramos a madeira e polimos as peças metálicas e acrílicas.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="process-step-number">03</div>
+            <h3>Calibração & Testes</h3>
+            <p>Calibramos o peso da agulha, anti-skating e azimute. O aparelho passa por teste estroboscópico e 48 horas de reprodução contínua para atestar estabilidade absoluta.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="process-step-number">04</div>
+            <h3>Entrega com Garantia</h3>
+            <p>Seu equipamento é embalado em caixa reforçada à prova de impactos e entregue com certificado de revisão e garantia de 90 dias com suporte pós-venda direto.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Módulo Visual Antes e Depois (Estudo de Caso em Destaque) -->
+    <section class="section" style="background-color: var(--color-surface-pure); border-top: 1px solid var(--color-border-subtle); border-bottom: 1px solid var(--color-border-subtle);" aria-label="Estudo de Caso Antes e Depois">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Transformação Real</span>
+          <h2 class="section-title">Estudo de Caso: Antes e Depois da Oficina</h2>
+          <div class="gold-divider"></div>
+          <p class="section-lead">
+            Arraste o cursor central para comparar o estado inicial de resgate com o resultado final após a restauração e polimento por André Denani e Emilio Colonic.
+          </p>
+        </div>
+
+        <div class="comparison-slider-wrapper">
+          <div class="comparison-container" style="--slider-pos: 50%;">
+            <!-- Imagem Depois (Restaurado) -->
+            <img src="assets/images/galeria/estudo-caso-depois.jpg" alt="Toca-discos Gradiente DD-100Q 100% restaurado e brilhando" class="comparison-img comparison-after">
+            
+            <!-- Imagem Antes (Desgastado) com clip-path -->
+            <img src="assets/images/galeria/estudo-caso-antes.jpg" alt="Toca-discos Gradiente DD-100Q empoeirado e desgastado antes da restauração" class="comparison-img comparison-before">
+
+            <!-- Divisor e Alça Central -->
+            <div class="comparison-handle">
+              <div class="comparison-handle-btn" aria-hidden="true">⟷</div>
+            </div>
+
+            <!-- Badges Indicativos -->
+            <span class="comparison-badge badge-before">Antes: Negligenciado</span>
+            <span class="comparison-badge badge-after">Depois: Restaurado</span>
+
+            <!-- Range Input Nativo Invisível -->
+            <input type="range" min="0" max="100" value="50" class="comparison-range" aria-label="Controle deslizante de comparação antes e depois">
+          </div>
+        </div>
+
+        <!-- Abas alternativas para mobile -->
+        <div class="comparison-mobile-tabs">
+          <button type="button" class="comparison-tab-btn" data-compare-view="before">Ver Desgastado</button>
+          <button type="button" class="comparison-tab-btn active" data-compare-view="center">Modo Divisor (50%)</button>
+          <button type="button" class="comparison-tab-btn" data-compare-view="after">Ver Restaurado</button>
+        </div>
+
+        <!-- Ficha Técnica do Caso -->
+        <div class="case-study-specs">
+          <div class="case-study-grid">
+            <div class="case-study-item">
+              <strong>Equipamento:</strong>
+              <span>Gradiente DD-100Q Direct Drive Quartz (Ano 1982)</span>
+            </div>
+            <div class="case-study-item">
+              <strong>Estado Inicial:</strong>
+              <span>Motor travado por graxa oxidada, tampa acrílica trincada e opaca, agulha avariada e madeira ressecada.</span>
+            </div>
+            <div class="case-study-item">
+              <strong>Intervenção Realizada:</strong>
+              <span>Desmontagem química completa, polimento em 3 etapas da tampa, verniz nobre no gabinete, substituição de agulha e calibração estroboscópica.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Depoimentos de Colecionadores -->
+    <section class="section" aria-label="Depoimentos de Clientes">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Prova Social</span>
+          <h2 class="section-title">O Que Dizem Nossos Colecionadores</h2>
+          <div class="gold-divider"></div>
+          <p class="section-lead">
+            Mais de uma década entregando música, história e paixão analógica por todo o Brasil.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card" style="background-color: var(--color-surface-pure); border: 1px solid var(--color-border-subtle);">
+            <div>
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-quote" style="color: var(--color-vinyl-black);">
+                "Enviei o toca-discos Gradiente que era do meu pai, parado há quase 20 anos na garagem. O Emilio e o André devolveram o aparelho parecendo que saiu da loja ontem! O som é inacreditável. Trabalho de mestre!"
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">RC</div>
+              <div class="author-info">
+                <h4 style="color: var(--color-vinyl-black);">Rodrigo Camargo</h4>
+                <span style="color: var(--color-primary-burgundy);">São Paulo, SP — Gradiente DD-100Q</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card" style="background-color: var(--color-surface-pure); border: 1px solid var(--color-border-subtle);">
+            <div>
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-quote" style="color: var(--color-vinyl-black);">
+                "Comprei uma Technics SL-D20 pelo site. Chegou no Rio de Janeiro impecavelmente embalada, com travas no braço e prato desmontado. Bastou plugar no receiver e ouvir o primeiro vinil. Nota mil!"
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">ML</div>
+              <div class="author-info">
+                <h4 style="color: var(--color-vinyl-black);">Marcelo Linhares</h4>
+                <span style="color: var(--color-primary-burgundy);">Rio de Janeiro, RJ — Technics Direct Drive</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card" style="background-color: var(--color-surface-pure); border: 1px solid var(--color-border-subtle);">
+            <div>
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-quote" style="color: var(--color-vinyl-black);">
+                "O atendimento do André pelo WhatsApp é diferenciado. Ele entende de som de verdade, me orientou sobre a escolha da cápsula Audio-Technica e calibrou o contrapeso com perfeição. Recomendo de olhos fechados."
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">FS</div>
+              <div class="author-info">
+                <h4 style="color: var(--color-vinyl-black);">Fernando Silveira</h4>
+                <span style="color: var(--color-primary-burgundy);">Curitiba, PR — Garrard 630S</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chamada para Ação Final -->
+    <section class="section section-burgundy" style="text-align: center;" aria-label="Contato Rápido">
+      <div class="container" style="max-width: 800px;">
+        <h2 style="font-size: 2.2rem; margin-bottom: 1rem;">Tem um Toca-Discos Precisando de Vida Nova?</h2>
+        <p style="font-size: 1.15rem; margin-bottom: 2rem; color: rgba(255, 255, 255, 0.9);">
+          Não deixe sua história parada pegando poeira. Converse diretamente com nossos especialistas e receba uma avaliação técnica sem compromisso.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="https://wa.me/5511996176660" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            Falar Agora no WhatsApp Oficial
+          </a>
+          <a href="contato.html" class="btn btn-gold btn-lg">
+            Formulário de Orçamento Detalhado
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé Global -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col footer-col-brand">
+          <img src=".docs/logo-loucos-por-vitrola.png" alt="Loucos por Vitrola" class="footer-logo" onerror="this.src='assets/images/logo-loucos-por-vitrola.png'">
+          <p class="footer-tagline">"A arte em toca discos"</p>
+          <p style="font-size: 0.9rem; color: #B5AEA8;">
+            Oficina técnica especializada na restauração, conserto e venda de vitrolas e toca-discos analógicos. Preservando a história e a musicalidade com padrão audiófilo de excelência.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="servicos.html">Nossos Serviços</a></li>
+            <li><a href="produtos.html">Catálogo de Vitrolas</a></li>
+            <li><a href="galeria.html">Galeria de Restaurações</a></li>
+            <li><a href="contato.html">Fale Conosco / Orçamentos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Marcas Atendidas</h4>
+          <ul class="footer-links">
+            <li><a href="produtos.html">Gradiente Vintage</a></li>
+            <li><a href="produtos.html">Technics Direct Drive</a></li>
+            <li><a href="produtos.html">Pioneer Audiófilo</a></li>
+            <li><a href="produtos.html">Garrard Britânico</a></li>
+            <li><a href="produtos.html">Cápsulas Audio-Technica</a></li>
+            <li><a href="produtos.html">Shure, Ortofon e Philips</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Atendimento & Oficina</h4>
+          <div class="footer-contact-item">
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Rua Brasilio Machado, 435<br>Vila Príncipe de Gales — Santo André, SP</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <a href="https://wa.me/5511996176660" target="_blank" rel="noopener noreferrer">(11) 99617-6660</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>Seg a Sex: 08:00 – 22:00<br>Sáb e Dom: 09:00 – 18:00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Selos Visuais de Pagamento e Confiança Global -->
+      <div class="payment-trust-section">
+        <div class="trust-badges-grid">
+          <div class="trust-badge-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+            <span><strong>Garantia 90 Dias</strong> Oficina Autorizada com Certificado</span>
+          </div>
+          <div class="trust-badge-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            <span><strong>Embalagem Anti-Impacto</strong> Fixação Mecânica para Envio Postal</span>
+          </div>
+        </div>
+        <div class="payment-flags-row">
+          <span style="font-size: 0.8rem; color: #b5aba1;">Métodos aceitos:</span>
+          <span class="payment-flag-badge pix">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="9" x2="15" y2="15"></line><line x1="15" y1="9" x2="9" y2="15"></line></svg>
+            PIX (5% OFF)
+          </span>
+          <span class="payment-flag-badge visa">VISA</span>
+          <span class="payment-flag-badge master">Mastercard</span>
+          <span class="payment-flag-badge parcelas">Até 12x no Cartão</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Loucos por Vitrola — Todos os direitos reservados. "A arte em toca discos".</p>
+        <p>Garantia de 90 dias em todas as manutenções e aparelhos revisados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Fundo Escuro para Gavetas / Backdrop -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <!-- Carrinho Lateral (Drawer Cart) -->
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Carrinho de Compras Lateral">
+    <div class="cart-header">
+      <h3>Seu Carrinho</h3>
+      <button type="button" class="cart-close-btn" id="cartCloseBtn" aria-label="Fechar Carrinho">✕</button>
+    </div>
+
+    <div class="cart-body">
+      <div class="cart-empty-state" id="cartEmptyState">
+        <svg class="cart-empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle><line x1="4.93" y1="4.93" x2="9.17" y2="9.17"></line></svg>
+        <h4>Seu carrinho está vazio</h4>
+        <p>Explore nosso catálogo e encontre o toca-discos dos seus sonhos revisado com garantia.</p>
+        <a href="produtos.html" class="btn btn-secondary btn-sm" onclick="window.cartInstance.close()">Ver Vitrolas à Venda</a>
+      </div>
+
+      <ul class="cart-items-list" id="cartItemsList" style="display: none;">
+        <!-- Renderizado dinamicamente pelo cart.js -->
+      </ul>
+
+      <!-- Calculador Rápido de Frete e Estimativa por CEP no Carrinho -->
+      <div class="cart-shipping-calc">
+        <div class="shipping-calc-box">
+          <label for="cartCepInput" class="shipping-calc-label">
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            Calcular Frete &amp; Prazo (ViaCEP)
+          </label>
+          <div class="shipping-input-group">
+            <input type="text" id="cartCepInput" class="shipping-input" placeholder="00000-000" maxlength="9">
+            <button type="button" id="cartCalcShippingBtn" class="btn btn-secondary btn-sm">Calcular</button>
+          </div>
+          <div id="cartShippingResult" class="shipping-result-box" style="display: none;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-summary-row">
+        <span>Subtotal:</span>
+        <span id="cartSubtotalPrice">R$ 0,00</span>
+      </div>
+      <div class="cart-summary-row" id="cartShippingRow" style="display: none;">
+        <span>Frete Estimado:</span>
+        <span id="cartShippingPrice">R$ 0,00</span>
+      </div>
+      <div class="cart-summary-row">
+        <span>Garantia da Oficina:</span>
+        <span style="color: #0F853B; font-weight: 600;">90 Dias Inclusa</span>
+      </div>
+      <div class="cart-total-row">
+        <span>Total:</span>
+        <span class="cart-total-price" id="cartTotalPrice">R$ 0,00</span>
+      </div>
+
+      <button type="button" class="btn btn-whatsapp btn-block btn-lg" id="cartCheckoutBtn">
+        <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+        Finalizar Pedido via WhatsApp
+      </button>
+
+      <!-- Selos de Pagamento e Confiança no Carrinho -->
+      <div class="cart-trust-badges">
+        <div class="cart-trust-note">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          Compra segura com atendimento direto dos técnicos André e Emilio.
+        </div>
+        <div class="cart-payment-methods">
+          <span class="badge-payment"><span class="badge-pix">PIX 5% OFF</span></span>
+          <span class="badge-payment">Visa</span>
+          <span class="badge-payment">Mastercard</span>
+          <span class="badge-payment">Até 12x</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Modal de Detalhes do Produto -->
+  <div class="modal-overlay" id="productDetailModal" role="dialog" aria-modal="true" aria-labelledby="modalProductTitle">
+    <div class="modal-container">
+      <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Fechar Detalhes">✕</button>
+      
+      <div class="modal-grid">
+        <div class="modal-gallery">
+          <img src="" alt="" class="modal-main-image" id="modalMainImage">
+          <div class="modal-thumbnails" id="modalThumbnails">
+            <!-- Miniaturas dinâmicas -->
+          </div>
+        </div>
+
+        <div class="modal-details">
+          <div class="modal-header-meta">
+            <span class="modal-brand" id="modalProductBrand">Technics</span>
+            <span class="badge badge-gold" id="modalProductBadge">Revisado</span>
+          </div>
+
+          <h2 class="modal-title" id="modalProductTitle">Nome do Produto</h2>
+          <div class="modal-price" id="modalProductPrice">R$ 0,00</div>
+
+          <p class="modal-description" id="modalProductDesc">Descrição completa do aparelho...</p>
+
+          <div class="modal-specs-box">
+            <h4 class="modal-specs-title">Ficha Técnica & Condição</h4>
+            <div style="font-size: 0.85rem; margin-bottom: 0.5rem; color: var(--color-text-muted);">
+              <strong>Estado:</strong> <span id="modalProductCondition">Totalmente Restaurado</span><br>
+              <strong>Voltagem:</strong> <span id="modalProductVoltage">110V / 220V</span><br>
+              <strong>Cápsula / Agulha:</strong> <span id="modalProductCartridge">Original</span>
+            </div>
+            <ul class="modal-specs-list" id="modalProductSpecs">
+              <!-- Lista dinâmica de specs -->
+            </ul>
+          </div>
+
+          <!-- Calculador Rápido de Frete e Estimativa por CEP no Modal -->
+          <div class="shipping-calc-box">
+            <label for="modalCepInput" class="shipping-calc-label">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+              Calcular Frete &amp; Prazo para o seu CEP (ViaCEP)
+            </label>
+            <div class="shipping-input-group">
+              <input type="text" id="modalCepInput" class="shipping-input" placeholder="00000-000" maxlength="9">
+              <button type="button" id="modalCalcShippingBtn" class="btn btn-secondary btn-sm">Calcular Frete</button>
+            </div>
+            <div id="modalShippingResult" class="shipping-result-box" style="display: none;"></div>
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" class="btn btn-primary" id="modalAddToCartBtn">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+              Adicionar ao Carrinho
+            </button>
+            <button type="button" class="btn btn-whatsapp" id="modalBuyWhatsAppBtn">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+              Comprar via WhatsApp
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts Modulares -->
+  <script src="assets/js/products-data.js" type="module"></script>
+  <script src="assets/js/comparison-slider.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/catalog.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
