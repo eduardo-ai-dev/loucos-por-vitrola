@@ -1,0 +1,21 @@
+{
+  "name": "Loucos por Vitrola",
+  "short_name": "LP Vitrola",
+  "description": "Restauração e venda de toca-discos analógicos com excelência.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#FDFBF7",
+  "theme_color": "#0D0C0A",
+  "icons": [
+    {
+      "src": ".docs/logo-loucos-por-vitrola.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": ".docs/logo-loucos-por-vitrola.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

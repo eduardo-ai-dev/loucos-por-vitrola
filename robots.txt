@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://loucosporvitrola.com.br/sitemap.xml
